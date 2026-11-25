@@ -1,0 +1,2451 @@
+{
+  "_meta": {
+    "recordedFrom": "api.bilibili.com / passport.bilibili.com anonymous responses (2026-11-25); every title, id, WBI key, cookie and token below is synthetic",
+    "ids": {
+      "singleBvid": "BV1d3Bili001",
+      "multiBvid": "BV1d3Bili002",
+      "seasonBvid": "BV1d3Bili003",
+      "seasonEpBvid": "BV1d3Bili004",
+      "searchBvid": "BV1d3Bili005",
+      "seasonId": 910001,
+      "childSeasonId": 910002,
+      "epId": 920001,
+      "epId2": 920002,
+      "previewEpId": 920009,
+      "drmEpId": 920010,
+      "missingEpId": 999999,
+      "aid": 880001,
+      "cid": 770001,
+      "multiCid": 770002,
+      "multiCid2": 770003,
+      "seasonCid": 770004,
+      "seasonEpCid": 770005,
+      "mid": "123456789",
+      "favFolderId": "555001"
+    }
+  },
+  "navAnonymous": {
+    "code": -101,
+    "message": "账号未登录",
+    "ttl": 1,
+    "data": {
+      "isLogin": false,
+      "wbi_img": {
+        "img_url": "https://i0.hdslb.com/bfs/wbi/0123456789abcdef0123456789abcdef.png",
+        "sub_url": "https://i0.hdslb.com/bfs/wbi/fedcba9876543210fedcba9876543210.png"
+      }
+    }
+  },
+  "navLoggedIn": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "isLogin": true,
+      "mid": 123456789,
+      "uname": "深度测试员",
+      "face": "https://i0.hdslb.com/bfs/face/fake-face.jpg",
+      "wbi_img": {
+        "img_url": "https://i0.hdslb.com/bfs/wbi/0123456789abcdef0123456789abcdef.png",
+        "sub_url": "https://i0.hdslb.com/bfs/wbi/fedcba9876543210fedcba9876543210.png"
+      }
+    }
+  },
+  "recommend": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "item": [
+        {
+          "id": 860000,
+          "bvid": "BV1d3Rec0000",
+          "cid": 760000,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-0.jpg",
+          "title": "深度测试：推荐 1",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860001,
+          "bvid": "BV1d3Rec0001",
+          "cid": 760001,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-1.jpg",
+          "title": "深度测试：推荐 2",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860002,
+          "bvid": "BV1d3Rec0002",
+          "cid": 760002,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-2.jpg",
+          "title": "深度测试：推荐 3",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860003,
+          "bvid": "BV1d3Rec0003",
+          "cid": 760003,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-3.jpg",
+          "title": "深度测试：推荐 4",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860004,
+          "bvid": "BV1d3Rec0004",
+          "cid": 760004,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-4.jpg",
+          "title": "深度测试：推荐 5",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860005,
+          "bvid": "BV1d3Rec0005",
+          "cid": 760005,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-5.jpg",
+          "title": "深度测试：推荐 6",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860006,
+          "bvid": "BV1d3Rec0006",
+          "cid": 760006,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-6.jpg",
+          "title": "深度测试：推荐 7",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860007,
+          "bvid": "BV1d3Rec0007",
+          "cid": 760007,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-7.jpg",
+          "title": "深度测试：推荐 8",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860008,
+          "bvid": "BV1d3Rec0008",
+          "cid": 760008,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-8.jpg",
+          "title": "深度测试：推荐 9",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860009,
+          "bvid": "BV1d3Rec0009",
+          "cid": 760009,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-9.jpg",
+          "title": "深度测试：推荐 10",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860010,
+          "bvid": "BV1d3Rec0010",
+          "cid": 760010,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-10.jpg",
+          "title": "深度测试：推荐 11",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860011,
+          "bvid": "BV1d3Rec0011",
+          "cid": 760011,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-11.jpg",
+          "title": "深度测试：推荐 12",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860012,
+          "bvid": "BV1d3Rec0012",
+          "cid": 760012,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-12.jpg",
+          "title": "深度测试：推荐 13",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860013,
+          "bvid": "BV1d3Rec0013",
+          "cid": 760013,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-13.jpg",
+          "title": "深度测试：推荐 14",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860014,
+          "bvid": "BV1d3Rec0014",
+          "cid": 760014,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-14.jpg",
+          "title": "深度测试：推荐 15",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860015,
+          "bvid": "BV1d3Rec0015",
+          "cid": 760015,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-15.jpg",
+          "title": "深度测试：推荐 16",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860016,
+          "bvid": "BV1d3Rec0016",
+          "cid": 760016,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-16.jpg",
+          "title": "深度测试：推荐 17",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860017,
+          "bvid": "BV1d3Rec0017",
+          "cid": 760017,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-17.jpg",
+          "title": "深度测试：推荐 18",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860018,
+          "bvid": "BV1d3Rec0018",
+          "cid": 760018,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-18.jpg",
+          "title": "深度测试：推荐 19",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 860019,
+          "bvid": "BV1d3Rec0019",
+          "cid": 760019,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec-19.jpg",
+          "title": "深度测试：推荐 20",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 99,
+          "bvid": "",
+          "cid": 0,
+          "goto": "live",
+          "uri": "https://live.bilibili.com/99",
+          "pic": "http://i0.hdslb.com/bfs/archive/live.jpg",
+          "title": "直播条目应被过滤",
+          "duration": 0,
+          "owner": {
+            "mid": 43,
+            "name": "主播"
+          },
+          "stat": {}
+        }
+      ]
+    }
+  },
+  "popular": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "no_more": true,
+      "list": [
+        {
+          "aid": 880002,
+          "videos": 2,
+          "tid": 4,
+          "tname": "游戏",
+          "pic": "http://i0.hdslb.com/bfs/archive/popular-1.jpg",
+          "title": "深度测试：两分P视频",
+          "pubdate": 1700000100,
+          "desc": "用于验证分P选集与音画分离 DASH。",
+          "duration": 1200,
+          "owner": {
+            "mid": 44,
+            "name": "测试UP主二"
+          },
+          "stat": {
+            "view": 5200000,
+            "danmaku": 12000,
+            "like": 90000
+          },
+          "bvid": "BV1d3Bili002"
+        },
+        {
+          "aid": 880003,
+          "videos": 1,
+          "tid": 1,
+          "tname": "动画",
+          "pic": "http://i0.hdslb.com/bfs/archive/popular-2.jpg",
+          "title": "深度测试：合集视频",
+          "pubdate": 1700000200,
+          "desc": "用于验证 UGC 合集分集。",
+          "duration": 300,
+          "owner": {
+            "mid": 45,
+            "name": "测试UP主三"
+          },
+          "stat": {
+            "view": 1000,
+            "danmaku": 20,
+            "like": 30
+          },
+          "bvid": "BV1d3Bili003"
+        }
+      ]
+    }
+  },
+  "ranking": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "note": "排行榜",
+      "list": [
+        {
+          "aid": 890000,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-0.jpg",
+          "title": "深度测试：排行榜 1",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank000"
+        },
+        {
+          "aid": 890001,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-1.jpg",
+          "title": "深度测试：排行榜 2",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank001"
+        },
+        {
+          "aid": 890002,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-2.jpg",
+          "title": "深度测试：排行榜 3",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank002"
+        },
+        {
+          "aid": 890003,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-3.jpg",
+          "title": "深度测试：排行榜 4",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank003"
+        },
+        {
+          "aid": 890004,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-4.jpg",
+          "title": "深度测试：排行榜 5",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank004"
+        },
+        {
+          "aid": 890005,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-5.jpg",
+          "title": "深度测试：排行榜 6",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank005"
+        },
+        {
+          "aid": 890006,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-6.jpg",
+          "title": "深度测试：排行榜 7",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank006"
+        },
+        {
+          "aid": 890007,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-7.jpg",
+          "title": "深度测试：排行榜 8",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank007"
+        },
+        {
+          "aid": 890008,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-8.jpg",
+          "title": "深度测试：排行榜 9",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank008"
+        },
+        {
+          "aid": 890009,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-9.jpg",
+          "title": "深度测试：排行榜 10",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank009"
+        },
+        {
+          "aid": 890010,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-10.jpg",
+          "title": "深度测试：排行榜 11",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank010"
+        },
+        {
+          "aid": 890011,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-11.jpg",
+          "title": "深度测试：排行榜 12",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank011"
+        },
+        {
+          "aid": 890012,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-12.jpg",
+          "title": "深度测试：排行榜 13",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank012"
+        },
+        {
+          "aid": 890013,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-13.jpg",
+          "title": "深度测试：排行榜 14",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank013"
+        },
+        {
+          "aid": 890014,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-14.jpg",
+          "title": "深度测试：排行榜 15",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank014"
+        },
+        {
+          "aid": 890015,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-15.jpg",
+          "title": "深度测试：排行榜 16",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank015"
+        },
+        {
+          "aid": 890016,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-16.jpg",
+          "title": "深度测试：排行榜 17",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank016"
+        },
+        {
+          "aid": 890017,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-17.jpg",
+          "title": "深度测试：排行榜 18",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank017"
+        },
+        {
+          "aid": 890018,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-18.jpg",
+          "title": "深度测试：排行榜 19",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank018"
+        },
+        {
+          "aid": 890019,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-19.jpg",
+          "title": "深度测试：排行榜 20",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank019"
+        },
+        {
+          "aid": 890020,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-20.jpg",
+          "title": "深度测试：排行榜 21",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank020"
+        },
+        {
+          "aid": 890021,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-21.jpg",
+          "title": "深度测试：排行榜 22",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank021"
+        },
+        {
+          "aid": 890022,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-22.jpg",
+          "title": "深度测试：排行榜 23",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank022"
+        },
+        {
+          "aid": 890023,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-23.jpg",
+          "title": "深度测试：排行榜 24",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank023"
+        },
+        {
+          "aid": 890024,
+          "videos": 1,
+          "tid": 188,
+          "tname": "科技",
+          "pic": "http://i0.hdslb.com/bfs/archive/ranking-24.jpg",
+          "title": "深度测试：排行榜 25",
+          "pubdate": 1700000300,
+          "desc": "排行榜条目。",
+          "duration": 600,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "stat": {
+            "view": 900000,
+            "danmaku": 500,
+            "like": 1000
+          },
+          "bvid": "BV1d3Rank024"
+        }
+      ]
+    }
+  },
+  "newlist": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "page": {
+        "count": 0,
+        "num": 1,
+        "size": 20
+      },
+      "archives": [
+        {
+          "aid": 880004,
+          "videos": 1,
+          "tid": 1,
+          "tname": "动画",
+          "pic": "http://i0.hdslb.com/bfs/archive/region-1.jpg",
+          "title": "深度测试：分区新视频",
+          "pubdate": 1700000400,
+          "desc": "分区列表条目。",
+          "duration": 240,
+          "owner": {
+            "mid": 46,
+            "name": "分区UP"
+          },
+          "stat": {
+            "view": 800,
+            "danmaku": 8,
+            "like": 12
+          },
+          "bvid": "BV1d3Bili005"
+        }
+      ]
+    }
+  },
+  "pgcRank": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "list": [
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b0.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930000,
+          "title": "深度测试番剧 1",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b1.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930001,
+          "title": "深度测试番剧 2",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b2.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930002,
+          "title": "深度测试番剧 3",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b3.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930003,
+          "title": "深度测试番剧 4",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b4.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930004,
+          "title": "深度测试番剧 5",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b5.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930005,
+          "title": "深度测试番剧 6",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b6.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930006,
+          "title": "深度测试番剧 7",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b7.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930007,
+          "title": "深度测试番剧 8",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b8.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930008,
+          "title": "深度测试番剧 9",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b9.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930009,
+          "title": "深度测试番剧 10",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b10.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930010,
+          "title": "深度测试番剧 11",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b11.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930011,
+          "title": "深度测试番剧 12",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b12.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930012,
+          "title": "深度测试番剧 13",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b13.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930013,
+          "title": "深度测试番剧 14",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b14.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930014,
+          "title": "深度测试番剧 15",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b15.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930015,
+          "title": "深度测试番剧 16",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b16.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930016,
+          "title": "深度测试番剧 17",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b17.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930017,
+          "title": "深度测试番剧 18",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b18.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930018,
+          "title": "深度测试番剧 19",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b19.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930019,
+          "title": "深度测试番剧 20",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b20.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930020,
+          "title": "深度测试番剧 21",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b21.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930021,
+          "title": "深度测试番剧 22",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b22.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930022,
+          "title": "深度测试番剧 23",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b23.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930023,
+          "title": "深度测试番剧 24",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/b24.png",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          },
+          "rank": 1,
+          "rating": "9.1分",
+          "season_id": 930024,
+          "title": "深度测试番剧 25",
+          "url": "https://www.bilibili.com/bangumi/play/ss910001"
+        }
+      ]
+    }
+  },
+  "views": {
+    "BV1d3Bili001": {
+      "code": 0,
+      "message": "0",
+      "ttl": 1,
+      "data": {
+        "aid": 880001,
+        "bvid": "BV1d3Bili001",
+        "cid": 770001,
+        "videos": 1,
+        "tid": 188,
+        "tname": "科技",
+        "copyright": 1,
+        "pic": "http://i0.hdslb.com/bfs/archive/view-1.jpg",
+        "title": "深度测试：单P视频",
+        "pubdate": 1700000000,
+        "desc": "单P视频详情。",
+        "duration": 600,
+        "owner": {
+          "mid": 42,
+          "name": "测试UP主",
+          "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+        },
+        "stat": {
+          "view": 123456,
+          "danmaku": 321,
+          "like": 2000
+        },
+        "pages": [
+          {
+            "cid": 770001,
+            "page": 1,
+            "from": "vupload",
+            "part": "正片",
+            "duration": 600
+          }
+        ]
+      }
+    },
+    "BV1d3Bili002": {
+      "code": 0,
+      "message": "0",
+      "ttl": 1,
+      "data": {
+        "aid": 880002,
+        "bvid": "BV1d3Bili002",
+        "cid": 770002,
+        "videos": 2,
+        "tid": 4,
+        "tname": "游戏",
+        "pic": "http://i0.hdslb.com/bfs/archive/view-2.jpg",
+        "title": "深度测试：两分P视频",
+        "pubdate": 1700000100,
+        "desc": "两分P视频详情。",
+        "duration": 1200,
+        "owner": {
+          "mid": 44,
+          "name": "测试UP主二",
+          "face": "https://i0.hdslb.com/bfs/face/fake2.jpg"
+        },
+        "stat": {
+          "view": 5200000,
+          "danmaku": 12000,
+          "like": 90000
+        },
+        "pages": [
+          {
+            "cid": 770002,
+            "page": 1,
+            "from": "vupload",
+            "part": "上集",
+            "duration": 600
+          },
+          {
+            "cid": 770003,
+            "page": 2,
+            "from": "vupload",
+            "part": "下集",
+            "duration": 600
+          }
+        ]
+      }
+    },
+    "BV1d3Bili003": {
+      "code": 0,
+      "message": "0",
+      "ttl": 1,
+      "data": {
+        "aid": 880003,
+        "bvid": "BV1d3Bili003",
+        "cid": 770004,
+        "videos": 1,
+        "tid": 1,
+        "tname": "动画",
+        "pic": "http://i0.hdslb.com/bfs/archive/view-3.jpg",
+        "title": "深度测试：合集视频",
+        "pubdate": 1700000200,
+        "desc": "UGC 合集详情。",
+        "duration": 300,
+        "owner": {
+          "mid": 45,
+          "name": "测试UP主三",
+          "face": "https://i0.hdslb.com/bfs/face/fake3.jpg"
+        },
+        "stat": {
+          "view": 1000,
+          "danmaku": 20,
+          "like": 30
+        },
+        "pages": [
+          {
+            "cid": 770004,
+            "page": 1,
+            "from": "vupload",
+            "part": "合集正片",
+            "duration": 300
+          }
+        ],
+        "ugc_season": {
+          "id": 730001,
+          "title": "深度测试合集",
+          "sections": [
+            {
+              "id": 740001,
+              "title": "正片",
+              "episodes": [
+                {
+                  "aid": 880003,
+                  "bvid": "BV1d3Bili003",
+                  "cid": 770004,
+                  "title": "合集 P1",
+                  "arc": {
+                    "aid": 880003,
+                    "bvid": "BV1d3Bili003",
+                    "title": "合集 P1",
+                    "duration": 300
+                  },
+                  "page": {
+                    "cid": 770004,
+                    "page": 1,
+                    "part": "合集正片",
+                    "duration": 300
+                  }
+                },
+                {
+                  "aid": 880005,
+                  "bvid": "BV1d3Bili004",
+                  "cid": 770005,
+                  "title": "合集 P2",
+                  "arc": {
+                    "aid": 880005,
+                    "bvid": "BV1d3Bili004",
+                    "title": "合集 P2",
+                    "duration": 240
+                  },
+                  "page": {
+                    "cid": 770005,
+                    "page": 1,
+                    "part": "合集续集",
+                    "duration": 240
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "related": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": [
+      {
+        "aid": 880002,
+        "bvid": "BV1d3Bili002",
+        "pic": "http://i0.hdslb.com/bfs/archive/rel-1.jpg",
+        "title": "相关视频：两分P",
+        "owner": {
+          "mid": 44,
+          "name": "测试UP主二"
+        },
+        "duration": 1200,
+        "stat": {
+          "view": 1
+        }
+      }
+    ]
+  },
+  "ugcPlayurl": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "quality": 32,
+      "format": "flv480",
+      "timelength": 600000,
+      "accept_quality": [
+        80,
+        64,
+        32,
+        16
+      ],
+      "support_formats": [
+        {
+          "quality": 80,
+          "new_description": "1080P 高清",
+          "need_vip": 0,
+          "need_login": 1
+        },
+        {
+          "quality": 64,
+          "new_description": "720P 准高清",
+          "need_vip": 0,
+          "need_login": 1
+        },
+        {
+          "quality": 32,
+          "new_description": "480P 标清",
+          "need_vip": 0,
+          "need_login": 0
+        },
+        {
+          "quality": 16,
+          "new_description": "360P 流畅",
+          "need_vip": 0,
+          "need_login": 0
+        }
+      ],
+      "is_drm": 0,
+      "is_preview": 0,
+      "dash": {
+        "duration": 600,
+        "video": [
+          {
+            "id": 32,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/v32-avc.m4s",
+            "backupUrl": [
+              "https://upos-fake2.bilivideo.com/ugc/v32-avc.m4s"
+            ],
+            "codecid": 7,
+            "codecs": "avc1.64001F",
+            "width": 852,
+            "height": 480,
+            "frameRate": "30.000",
+            "bandwidth": 650706,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-935",
+              "indexRange": "936-1251"
+            }
+          },
+          {
+            "id": 32,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/v32-hevc.m4s",
+            "codecid": 12,
+            "codecs": "hvc1.1.6.L120.90",
+            "width": 852,
+            "height": 480,
+            "frameRate": "30.000",
+            "bandwidth": 480000,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-1103",
+              "indexRange": "1104-1419"
+            }
+          },
+          {
+            "id": 32,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/v32-av1.m4s",
+            "codecid": 13,
+            "codecs": "av01.0.04M.08",
+            "width": 852,
+            "height": 480,
+            "frameRate": "30.000",
+            "bandwidth": 400000,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-900",
+              "indexRange": "901-1200"
+            }
+          },
+          {
+            "id": 16,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/v16-avc.m4s",
+            "codecid": 7,
+            "codecs": "avc1.64001E",
+            "width": 640,
+            "height": 360,
+            "frameRate": "30.000",
+            "bandwidth": 300000,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-900",
+              "indexRange": "901-1200"
+            }
+          }
+        ],
+        "audio": [
+          {
+            "id": 30280,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/a192.m4s",
+            "codecs": "mp4a.40.2",
+            "bandwidth": 192000,
+            "mimeType": "audio/mp4",
+            "SegmentBase": {
+              "Initialization": "0-836",
+              "indexRange": "837-1152"
+            }
+          },
+          {
+            "id": 30216,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/a64.m4s",
+            "codecs": "mp4a.40.2",
+            "bandwidth": 65739,
+            "mimeType": "audio/mp4",
+            "SegmentBase": {
+              "Initialization": "0-800",
+              "indexRange": "801-1100"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "ugcPlayurl360": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "quality": 16,
+      "timelength": 600000,
+      "accept_quality": [
+        16
+      ],
+      "support_formats": [
+        {
+          "quality": 32,
+          "new_description": "480P 标清",
+          "need_vip": 0
+        },
+        {
+          "quality": 16,
+          "new_description": "360P 流畅",
+          "need_vip": 0
+        }
+      ],
+      "is_drm": 0,
+      "is_preview": 0,
+      "dash": {
+        "duration": 600,
+        "video": [
+          {
+            "id": 16,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/v16-only.m4s",
+            "codecid": 7,
+            "codecs": "avc1.64001E",
+            "width": 640,
+            "height": 360,
+            "frameRate": "30.000",
+            "bandwidth": 300000,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-900",
+              "indexRange": "901-1200"
+            }
+          }
+        ],
+        "audio": [
+          {
+            "id": 30216,
+            "baseUrl": "https://upos-fake.bilivideo.com/ugc/a64.m4s",
+            "codecs": "mp4a.40.2",
+            "bandwidth": 65739,
+            "mimeType": "audio/mp4",
+            "SegmentBase": {
+              "Initialization": "0-800",
+              "indexRange": "801-1100"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "season": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "season_id": 910001,
+      "title": "深度测试番剧",
+      "season_title": "第一季",
+      "cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-1.png",
+      "bkg_cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-bg.png",
+      "evaluate": "用于验证番剧、季与分集层级的测试番剧。",
+      "rating": {
+        "score": 9.1,
+        "count": 1000
+      },
+      "styles": [
+        "科幻",
+        "冒险"
+      ],
+      "areas": [
+        {
+          "id": 2,
+          "name": "日本"
+        }
+      ],
+      "publish": {
+        "is_finish": 0,
+        "is_started": 1,
+        "pub_time": "2025-01-02 10:00:00"
+      },
+      "new_ep": {
+        "index_show": "更新至第 12 话",
+        "id": 920002
+      },
+      "stat": {
+        "views": 1234567,
+        "favorites": 50000,
+        "follow_text": "5.0万追番"
+      },
+      "seasons": [
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-1.png",
+          "season_id": 910001,
+          "season_title": "第一季",
+          "new_ep": {
+            "index_show": "更新至第 12 话"
+          }
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-2.png",
+          "season_id": 910002,
+          "season_title": "第二季",
+          "new_ep": {
+            "index_show": "全 12 话"
+          }
+        }
+      ],
+      "episodes": [
+        {
+          "aid": 881001,
+          "bvid": "BV1d3Bili101",
+          "cid": 771001,
+          "id": 920001,
+          "ep_id": 920001,
+          "title": "1",
+          "long_title": "启程",
+          "cover": "http://i0.hdslb.com/bfs/archive/ep-1.jpg",
+          "duration": 1440000,
+          "badge": "",
+          "rights": {
+            "allow_dm": 1
+          }
+        },
+        {
+          "aid": 881002,
+          "bvid": "BV1d3Bili102",
+          "cid": 771002,
+          "id": 920002,
+          "ep_id": 920002,
+          "title": "2",
+          "long_title": "跃迁",
+          "cover": "http://i0.hdslb.com/bfs/archive/ep-2.jpg",
+          "duration": 1500000,
+          "badge": "",
+          "rights": {
+            "allow_dm": 1
+          }
+        },
+        {
+          "aid": 881009,
+          "bvid": "BV1d3Bili109",
+          "cid": 771009,
+          "id": 920009,
+          "ep_id": 920009,
+          "title": "3",
+          "long_title": "会员抢先",
+          "cover": "http://i0.hdslb.com/bfs/archive/ep-3.jpg",
+          "duration": 1500000,
+          "badge": "会员",
+          "rights": {
+            "allow_dm": 1
+          }
+        },
+        {
+          "aid": 881010,
+          "bvid": "BV1d3Bili110",
+          "cid": 771010,
+          "id": 920010,
+          "ep_id": 920010,
+          "title": "4",
+          "long_title": "DRM 测试",
+          "cover": "http://i0.hdslb.com/bfs/archive/ep-4.jpg",
+          "duration": 1500000,
+          "badge": "",
+          "rights": {
+            "allow_dm": 1
+          }
+        }
+      ]
+    }
+  },
+  "pgcPlayurl": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "quality": 32,
+      "timelength": 1440000,
+      "accept_quality": [
+        80,
+        64,
+        32,
+        16
+      ],
+      "support_formats": [
+        {
+          "quality": 80,
+          "new_description": "1080P 高清",
+          "need_login": 1
+        },
+        {
+          "quality": 64,
+          "new_description": "720P 准高清",
+          "need_login": 1
+        },
+        {
+          "quality": 32,
+          "new_description": "480P 标清"
+        },
+        {
+          "quality": 16,
+          "new_description": "360P 流畅"
+        }
+      ],
+      "is_drm": 0,
+      "is_preview": 0,
+      "dash": {
+        "duration": 1440,
+        "video": [
+          {
+            "id": 32,
+            "baseUrl": "https://upos-fake.bilivideo.com/pgc/v32-avc.m4s",
+            "codecid": 7,
+            "codecs": "avc1.64001F",
+            "width": 852,
+            "height": 480,
+            "frameRate": "30.000",
+            "bandwidth": 650706,
+            "mimeType": "video/mp4",
+            "SegmentBase": {
+              "Initialization": "0-935",
+              "indexRange": "936-1251"
+            }
+          }
+        ],
+        "audio": [
+          {
+            "id": 30280,
+            "baseUrl": "https://upos-fake.bilivideo.com/pgc/a192.m4s",
+            "codecs": "mp4a.40.2",
+            "bandwidth": 192000,
+            "mimeType": "audio/mp4",
+            "SegmentBase": {
+              "Initialization": "0-836",
+              "indexRange": "837-1152"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "pgcPlayurlPreview": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "quality": 112,
+      "timelength": 1500000,
+      "is_preview": 1,
+      "has_paid": false,
+      "durl": [
+        {
+          "order": 1,
+          "length": 15000,
+          "size": 2000000,
+          "url": "https://upos-fake.bilivideo.com/pgc/preview.mp4"
+        }
+      ]
+    }
+  },
+  "pgcPlayurlDrm": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "quality": 112,
+      "timelength": 1500000,
+      "is_drm": 1,
+      "is_preview": 0,
+      "dash": {
+        "duration": 1500,
+        "video": [
+          {
+            "id": 112,
+            "baseUrl": "https://upos-fake.bilivideo.com/pgc/drm.m4s",
+            "codecid": 7,
+            "codecs": "avc1.640028",
+            "width": 1920,
+            "height": 1080,
+            "bandwidth": 2000000,
+            "mimeType": "video/mp4"
+          }
+        ],
+        "audio": []
+      }
+    }
+  },
+  "search": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "seid": "fake-seid",
+      "page": 1,
+      "pagesize": 20,
+      "numResults": 42,
+      "numPages": 3,
+      "result": [
+        {
+          "type": "video",
+          "id": 880005,
+          "author": "搜索UP",
+          "mid": 47,
+          "typename": "科技",
+          "aid": 880005,
+          "bvid": "BV1d3Bili005",
+          "title": "深度测试：<em class=\"keyword\">深度</em>搜索结果",
+          "description": "搜索结果描述。",
+          "pic": "//i0.hdslb.com/bfs/archive/search-1.jpg",
+          "play": 12345,
+          "video_review": 100,
+          "pubdate": 1700000500,
+          "duration": "10:00",
+          "is_pay": 0,
+          "badgepay": false
+        },
+        {
+          "type": "video",
+          "id": 880005,
+          "author": "搜索UP",
+          "mid": 47,
+          "typename": "科技",
+          "aid": 880005,
+          "bvid": "BV1d3Bili005",
+          "title": "深度测试：<em class=\"keyword\">深度</em>搜索结果（重复项）",
+          "description": "搜索结果描述。",
+          "pic": "//i0.hdslb.com/bfs/archive/search-1.jpg",
+          "play": 12345,
+          "video_review": 100,
+          "pubdate": 1700000500,
+          "duration": "10:00",
+          "is_pay": 0,
+          "badgepay": false
+        }
+      ]
+    }
+  },
+  "bangumiSearch": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "seid": "fake-seid",
+      "page": 1,
+      "pagesize": 20,
+      "numResults": 1,
+      "numPages": 1,
+      "result": [
+        {
+          "type": "media_bangumi",
+          "media_id": 910001,
+          "season_id": 910001,
+          "title": "深度测试<em class=\"keyword\">番剧</em>",
+          "season_type_name": "番剧",
+          "index_show": "全 12 话",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-1.png",
+          "desc": "番剧搜索结果。",
+          "media_score": {
+            "score": 9.0
+          },
+          "badges": [
+            {
+              "text": "大会员"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "suggest": {
+    "code": 0,
+    "result": {
+      "tag": [
+        {
+          "value": "深度测试",
+          "term": "深度测试",
+          "name": "深度测试"
+        },
+        {
+          "value": "深度估计",
+          "term": "深度估计",
+          "name": "深度估计"
+        },
+        {
+          "value": "深度测试",
+          "term": "深度测试",
+          "name": "深度测试"
+        }
+      ]
+    }
+  },
+  "qrGenerate": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "url": "https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=FAKEQRKEY0123456789abcdef0123456&from=main-fe-header",
+      "qrcode_key": "FAKEQRKEY0123456789abcdef0123456"
+    }
+  },
+  "qrPollPending": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "url": "",
+      "refresh_token": "",
+      "timestamp": 0,
+      "code": 86101,
+      "message": "未扫码"
+    }
+  },
+  "qrPollScanned": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "url": "",
+      "refresh_token": "",
+      "timestamp": 0,
+      "code": 86090,
+      "message": "已扫码"
+    }
+  },
+  "qrPollSuccess": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "url": "https://passport.biligame.com/crossDomain?DedeUserID=123456789&DedeUserID__ckMd5=fakeck&SESSDATA=fake%2Csession%2Cdata*11&bili_jct=fakecsrf&gourl=https%3A%2F%2Fwww.bilibili.com%2F",
+      "refresh_token": "fakerefresh",
+      "timestamp": 1700000000,
+      "code": 0,
+      "message": ""
+    }
+  },
+  "history": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "cursor": {
+        "max": 1790000000,
+        "view_at": 1790000000,
+        "business": "archive",
+        "ps": 20
+      },
+      "list": [
+        {
+          "title": "深度测试：两分P视频",
+          "long_title": "上集",
+          "cover": "http://i0.hdslb.com/bfs/archive/view-2.jpg",
+          "author_name": "测试UP主二",
+          "duration": 600,
+          "progress": 120,
+          "view_at": 1790000000,
+          "history": {
+            "oid": 880002,
+            "bvid": "BV1d3Bili002",
+            "cid": 770002,
+            "page": 1,
+            "business": "archive"
+          }
+        },
+        {
+          "title": "直播历史应被过滤",
+          "cover": "",
+          "duration": 0,
+          "progress": -1,
+          "history": {
+            "oid": 99,
+            "business": "live"
+          }
+        }
+      ]
+    }
+  },
+  "favFolders": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "count": 1,
+      "list": [
+        {
+          "id": 555001,
+          "fid": 555001,
+          "mid": 123456789,
+          "name": "默认收藏夹",
+          "media_count": 2
+        }
+      ]
+    }
+  },
+  "favList": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "info": {
+        "id": 555001,
+        "title": "默认收藏夹",
+        "media_count": 2
+      },
+      "medias": [
+        {
+          "id": 880001,
+          "type": 2,
+          "title": "收藏的测试视频",
+          "cover": "http://i0.hdslb.com/bfs/archive/view-1.jpg",
+          "intro": "收藏夹条目。",
+          "page": 1,
+          "duration": 600,
+          "pubtime": 1700000000,
+          "upper": {
+            "mid": 42,
+            "name": "测试UP主"
+          },
+          "bvid": "BV1d3Bili001"
+        }
+      ],
+      "has_more": false
+    }
+  },
+  "favDeal": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+      "prompt": false
+    }
+  },
+  "historyReport": {
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {}
+  },
+  "notFound": {
+    "code": -404,
+    "message": "啥都木有",
+    "ttl": 1,
+    "data": null
+  },
+  "pgcRankMovie": {
+    "code": 0,
+    "message": "success",
+    "result": {
+      "list": [
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/m0.png",
+          "new_ep": {
+            "index_show": "正片"
+          },
+          "rank": 2,
+          "rating": "8.2分",
+          "season_id": 940000,
+          "title": "深度测试电影 1",
+          "url": "https://www.bilibili.com/bangumi/play/ss910002"
+        },
+        {
+          "badge": "大会员",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/image/m1.png",
+          "new_ep": {
+            "index_show": "正片"
+          },
+          "rank": 2,
+          "rating": "8.2分",
+          "season_id": 940001,
+          "title": "深度测试电影 2",
+          "url": "https://www.bilibili.com/bangumi/play/ss910002"
+        }
+      ]
+    }
+  },
+  "recommendMore": {
+    "code": 0,
+    "message": "OK",
+    "ttl": 1,
+    "data": {
+      "item": [
+        {
+          "id": 870000,
+          "bvid": "BV1d3Rec1000",
+          "cid": 770900,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec2-0.jpg",
+          "title": "深度测试：推荐续 1",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 870001,
+          "bvid": "BV1d3Rec1001",
+          "cid": 770901,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec2-1.jpg",
+          "title": "深度测试：推荐续 2",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 870002,
+          "bvid": "BV1d3Rec1002",
+          "cid": 770902,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec2-2.jpg",
+          "title": "深度测试：推荐续 3",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 870003,
+          "bvid": "BV1d3Rec1003",
+          "cid": 770903,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec2-3.jpg",
+          "title": "深度测试：推荐续 4",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        },
+        {
+          "id": 870004,
+          "bvid": "BV1d3Rec1004",
+          "cid": 770904,
+          "goto": "av",
+          "uri": "https://www.bilibili.com/video/BV1d3Bili001",
+          "pic": "http://i0.hdslb.com/bfs/archive/rec2-4.jpg",
+          "title": "深度测试：推荐续 5",
+          "duration": 600,
+          "pubdate": 1700000000,
+          "owner": {
+            "mid": 42,
+            "name": "测试UP主",
+            "face": "https://i0.hdslb.com/bfs/face/fake.jpg"
+          },
+          "stat": {
+            "view": 123456,
+            "like": 2000,
+            "danmaku": 321
+          }
+        }
+      ]
+    }
+  }
+}

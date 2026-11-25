@@ -1,0 +1,17 @@
+{
+  "name": "dreama-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Community media-source plugins for Dreama (depth3d) - 2D to real-time 3D cinema on PICO",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/build.mjs --check",
+    "test": "node --test test/*.test.mjs"
+  }
+}

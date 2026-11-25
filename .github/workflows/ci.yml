@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # The plugin-kit lives in the depth3d repo, so CI checks out both.
+      # Set the repository variable DEPTH3D_REPO when the plugin-kit moves or
+      # when depth3d is private (a private repo needs a PAT with read access:
+      # pass it as `token:` below, the default GITHUB_TOKEN cannot see it).
+      - uses: actions/checkout@v4
+        with:
+          path: plugins
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.DEPTH3D_REPO || 'yexrob/depth3d' }}
+          path: depth3d
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: depth3d/tools/plugin-kit/package-lock.json
+
+      - name: Install plugin-kit
+        working-directory: depth3d/tools/plugin-kit
+        run: npm ci
+
+      - name: Offline regression tests
+        working-directory: plugins
+        env:
+          DEPTH3D_KIT: ${{ github.workspace }}/depth3d/tools/plugin-kit
+        run: npm test
+
+      - name: Verify dist/ and index.json are up to date
+        working-directory: plugins
+        env:
+          DEPTH3D_KIT: ${{ github.workspace }}/depth3d/tools/plugin-kit
+        run: npm run verify

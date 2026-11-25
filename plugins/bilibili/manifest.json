@@ -1,0 +1,58 @@
+{
+  "api": 1,
+  "id": "dev.depth3d.bilibili",
+  "name": "$t:plugin_name",
+  "version": "1.0.2",
+  "author": "depth3d",
+  "description": "$t:plugin_desc",
+  "license": "GPL-3.0-or-later",
+  "minApp": "1.0.0",
+  "multiInstance": false,
+  "capabilities": [
+    "search",
+    "progress",
+    "favorites",
+    "subtitles",
+    "categories"
+  ],
+  "permissions": {
+    "hosts": [
+      "api.bilibili.com",
+      "passport.bilibili.com",
+      "s.search.bilibili.com"
+    ],
+    "userHosts": false,
+    "lan": false
+  },
+  "config": [
+    {
+      "key": "quality",
+      "type": "select",
+      "label": "$t:cfg_quality",
+      "options": [
+        {
+          "value": "auto",
+          "label": "$t:q_auto"
+        },
+        {
+          "value": "1080",
+          "label": "$t:q_1080"
+        },
+        {
+          "value": "720",
+          "label": "$t:q_720"
+        },
+        {
+          "value": "480",
+          "label": "$t:q_480"
+        },
+        {
+          "value": "360",
+          "label": "$t:q_360"
+        }
+      ],
+      "default": "auto"
+    }
+  ],
+  "auth": "qr"
+}

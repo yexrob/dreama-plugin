@@ -1,0 +1,14 @@
+{
+  "name": "Dreama 插件仓库",
+  "plugins": [
+    {
+      "id": "dev.depth3d.bilibili",
+      "name": "哔哩哔哩",
+      "version": "1.0.2",
+      "description": "浏览哔哩哔哩的视频、番剧与排行榜；扫码登录后可同步观看历史、收藏和播放进度",
+      "url": "https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/dist/dev.depth3d.bilibili-1.0.2.d3plugin",
+      "sha256": "cf40607a089b5b88da663e3049f7749471e04f73144743d30b5b4499d3d16d5e",
+      "minApp": "1.0.0"
+    }
+  ]
+}
