@@ -14,6 +14,8 @@ https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/index.json
 
 索引 `index.json` 列出本仓库全部插件及其 `sha256`，App 下载后会先校验哈希再校验包内 `manifest.json` 的 `id` / `version`。
 
+> jsDelivr 对 `@main` 的缓存最长 12 小时。发布新版本后跑一次 `npm run purge`（清缓存并核对线上内容），否则用户可能还在读旧的 `index.json`。
+
 ## 插件列表
 
 | 插件 | id | 版本 | 需要账号 | 说明 |
@@ -57,6 +59,7 @@ npm run check                             # 打真实服务跑 d3plugin check（
 npm run check -- bilibili                 # 只查一个
 npm run build                             # 生成 dist/*.d3plugin 与 index.json
 npm run verify                            # 确认 dist/ 与 index.json 和源码一致
+npm run purge                             # 推送后清掉 jsDelivr 的缓存并核对线上 index
 ```
 
 `DEPTH3D_KIT=/path/to/dreama/tools/plugin-kit` 可以覆盖自动查找。
@@ -80,6 +83,7 @@ index.json          仓库索引（由 npm run build 生成，不要手改）
 lib/kit.mjs         定位并加载 depth3d plugin-kit
 scripts/build.mjs   打包 + 生成索引 + --check 校验一致性
 scripts/lint.mjs    不依赖 kit 的结构检查（manifest、文案、index/dist 一致性）
+scripts/purge.mjs   推送后清理 jsDelivr 缓存，并核对 CDN 上的 index 是否已更新
 scripts/check.mjs   对所有插件跑 d3plugin check
 test/               每个插件一条离线回归（fixtures 驱动）
 ```
