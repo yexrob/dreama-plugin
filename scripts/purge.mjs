@@ -58,7 +58,7 @@ async function purgeOnce(url) {
 let ok = true;
 for (const url of files) {
   let purged = false;
-  for (let attempt = 0; attempt < 3 && !purged; attempt++) {
+  for (let attempt = 0; attempt < 6 && !purged; attempt++) {
     purged = await purgeOnce(url).catch(() => false);
     if (!purged) await new Promise((r) => setTimeout(r, 3000));
   }
@@ -67,12 +67,23 @@ for (const url of files) {
 }
 
 // Verify the index actually reflects the repository now.
-const liveJson = httpGet(`${repoRef}/index.json`);
 let live = null;
-try {
-  live = liveJson ? JSON.parse(liveJson) : null;
-} catch {
-  live = null;
+for (let attempt = 0; attempt < 6 && !live; attempt++) {
+  if (attempt > 0) await new Promise((r) => setTimeout(r, 5000));
+  const liveJson = httpGet(`${repoRef}/index.json`);
+  let parsed = null;
+  try {
+    parsed = liveJson ? JSON.parse(liveJson) : null;
+  } catch {
+    parsed = null;
+  }
+  const ids = parsed ? JSON.stringify(parsed.plugins.map((p) => `${p.id}@${p.version}`)) : null;
+  if (ids === expected) live = parsed;
+}
+
+if (!live) {
+  const liveJson = httpGet(`${repoRef}/index.json`);
+  try { live = liveJson ? JSON.parse(liveJson) : null; } catch { live = null; }
 }
 
 if (!live) {
