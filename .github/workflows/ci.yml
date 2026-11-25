@@ -30,8 +30,8 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: ${{ vars.DEPTH3D_REPO }}
-          path: depth3d
+          repository: ${{ vars.DREAMA_REPO }}
+          path: dreama
           # A private Dreama needs a PAT here (the default GITHUB_TOKEN cannot
           # see other repositories):
           # token: ${{ secrets.DREAMA_READ_TOKEN }}
