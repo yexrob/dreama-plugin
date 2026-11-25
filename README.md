@@ -18,7 +18,7 @@ https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/index.json
 
 | 插件 | id | 版本 | 需要账号 | 说明 |
 |---|---|---|---|---|
-| 哔哩哔哩 | `dev.depth3d.bilibili` | 1.0.2 | 可选（扫码） | 推荐 / 热门 / 排行榜 / 番剧 / 影视 / 分区 / 搜索；音画分离 DASH、清晰度切换、观看历史、收藏、进度同步、外挂字幕 |
+| 哔哩哔哩 | `dev.dreama.bilibili` | 1.1.0 | 可选（扫码） | 推荐 / 热门 / 排行榜 / 番剧 / 影视 / 分区 / 搜索；音画分离 DASH、清晰度切换、观看历史、收藏、进度同步、外挂字幕 |
 
 各插件的能力、配置项与已知限制见 [`docs/plugins/`](docs/plugins/)。
 

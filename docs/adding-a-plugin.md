@@ -20,7 +20,7 @@ plugins/<name>/
 ```json
 {
   "api": 1,
-  "id": "dev.depth3d.example",
+  "id": "dev.dreama.example",
   "name": "$t:plugin_name",
   "version": "1.0.0",
   "author": "you",
@@ -44,7 +44,7 @@ plugins/<name>/
 
 规则：
 
-- `id` 反向域名、全局唯一、安装后不可变；**本仓库用 `dev.depth3d.<name>` 前缀**，第三方自建仓库请用你自己的域名。
+- `id` 反向域名、全局唯一、安装后不可变；**本仓库用 `dev.dreama.<name>` 前缀**，第三方自建仓库请用你自己的域名。
 - `permissions.hosts` 只写插件真的会请求的域名；`lan: true` 只在需要访问局域网设备时才加（自建服务器），视频网站的插件必须是 `false`。
 - `capabilities` 里写了什么就必须实现对应的函数，`npm run check` 会核对。
 - `auth`：`none` / `form`（用 config 里的账号密码，需要 `login`）/ `qr` 或 `device`（需要 `loginStart` + `loginPoll`）。
