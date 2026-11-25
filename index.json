@@ -7,7 +7,7 @@
       "version": "1.1.0",
       "description": "浏览哔哩哔哩的视频、番剧与排行榜；扫码登录后可同步观看历史、收藏和播放进度",
       "url": "https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/dist/dev.dreama.bilibili-1.1.0.d3plugin",
-      "sha256": "9cd8e47784c132268df8f4ab8e1b70b3c7de721ff24a4a7f5dcb6193df35b2ff",
+      "sha256": "c6abd68cb8ab4b65dff8c1f5cf0ad52f226e8fb159c7c8ad635271fe40ecc861",
       "minApp": "1.0.0"
     }
   ]
