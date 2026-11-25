@@ -3,7 +3,7 @@
 完整说明见 [`docs/plugins/bilibili.md`](../../docs/plugins/bilibili.md)。
 
 - id：`dev.dreama.bilibili`
-- 能力：`search` `progress` `favorites` `subtitles` `categories`
+- 能力：`search` `progress` `favorites` `subtitles` `danmaku` `categories`
 - 登录：`auth: "qr"`（手机客户端扫码，可选）
 - 权限：`api.bilibili.com`、`passport.bilibili.com`、`s.search.bilibili.com`；不使用局域网
 

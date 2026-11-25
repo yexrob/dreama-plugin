@@ -340,9 +340,211 @@ async function requestJson(ctx, url, opts = {}) {
 }
 
 /* ------------------------------------------------------------------ */
-/* WBI signing                                                         */
+/* danmaku                                                             */
 /* ------------------------------------------------------------------ */
 
+// Danmaku comes from the protobuf segment endpoint (`x/v2/dm/web/seg.so`), not
+// from `x/v1/dm/list.so`: the XML endpoint always answers with a
+// deflate-compressed body and the sandbox has no inflate primitive, while the
+// protobuf endpoint is served uncompressed and paginates by 6-minute segments,
+// which maps directly onto the protocol's fromMs/toMs windows.
+const DANMAKU_SEGMENT_MS = 6 * 60 * 1000;
+const DANMAKU_MAX_SEGMENTS = 8;
+const DANMAKU_MAX_ITEMS = 2000;
+const DANMAKU_CACHE_TTL_MS = 10 * 60 * 1000;
+const DANMAKU_CACHE_MAX = 24;
+
+const danmakuCache = new Map();
+
+// Protobuf wire format reader. Only what DmSegMobileReply needs: varints,
+// length-delimited fields and skipping of fixed32/fixed64 groups we ignore.
+// Values wider than 42 bits (danmaku ids are int64) are truncated on purpose:
+// only progress/mode/color are read as numbers, and those are small.
+function readVarint(bytes, state) {
+  let result = 0;
+  let shift = 1;
+  let count = 0;
+  let byte;
+  do {
+    if (state.pos >= state.end) throw new Error('protobuf: truncated varint');
+    byte = bytes[state.pos++];
+    if (count < 6) result += (byte & 0x7f) * shift;
+    shift *= 128;
+    count++;
+    if (count > 10) throw new Error('protobuf: varint too long');
+  } while (byte & 0x80);
+  return result;
+}
+
+function decodeUtf8(bytes, start, end) {
+  let out = '';
+  let i = start;
+  while (i < end) {
+    const b0 = bytes[i++];
+    let cp;
+    if (b0 < 0x80) cp = b0;
+    else if (b0 < 0xc0) continue; // stray continuation byte: drop it
+    else if (b0 < 0xe0) {
+      if (i >= end) break;
+      cp = ((b0 & 0x1f) << 6) | (bytes[i++] & 0x3f);
+    } else if (b0 < 0xf0) {
+      if (i + 1 >= end) break;
+      cp = ((b0 & 0x0f) << 12) | ((bytes[i++] & 0x3f) << 6) | (bytes[i++] & 0x3f);
+    } else {
+      if (i + 2 >= end) break;
+      cp =
+        ((b0 & 0x07) << 18) |
+        ((bytes[i++] & 0x3f) << 12) |
+        ((bytes[i++] & 0x3f) << 6) |
+        (bytes[i++] & 0x3f);
+      if (cp > 0x10ffff) cp = 0xfffd;
+    }
+    if (cp > 0xffff) {
+      cp -= 0x10000;
+      out += String.fromCharCode(0xd800 + (cp >> 10), 0xdc00 + (cp & 0x3ff));
+    } else {
+      out += String.fromCharCode(cp);
+    }
+  }
+  return out;
+}
+
+function parseDanmakuElem(bytes, start, end) {
+  const state = { pos: start, end };
+  const elem = { progressMs: 0, mode: 1, color: 0xffffff, text: '', idStr: '' };
+  while (state.pos < end) {
+    const key = readVarint(bytes, state);
+    const field = key >> 3;
+    const wire = key & 7;
+    if (wire === 0) {
+      const value = readVarint(bytes, state);
+      if (field === 2) elem.progressMs = value;
+      else if (field === 3) elem.mode = value;
+      else if (field === 5) elem.color = value;
+    } else if (wire === 2) {
+      const length = readVarint(bytes, state);
+      const next = state.pos + length;
+      if (next > end) throw new Error('protobuf: field overruns message');
+      if (field === 7) elem.text = decodeUtf8(bytes, state.pos, next);
+      else if (field === 12) elem.idStr = decodeUtf8(bytes, state.pos, next);
+      state.pos = next;
+    } else if (wire === 5) {
+      state.pos += 4;
+    } else if (wire === 1) {
+      state.pos += 8;
+    } else {
+      throw new Error(`protobuf: unsupported wire type ${wire}`);
+    }
+  }
+  return elem;
+}
+
+// DmSegMobileReply { repeated DanmakuElem elems = 1; }
+function parseDanmakuSegment(buffer) {
+  const bytes = new Uint8Array(buffer);
+  const state = { pos: 0, end: bytes.length };
+  const items = [];
+  while (state.pos < state.end) {
+    const key = readVarint(bytes, state);
+    const field = key >> 3;
+    const wire = key & 7;
+    if (wire === 0) {
+      readVarint(bytes, state);
+    } else if (wire === 2) {
+      const length = readVarint(bytes, state);
+      const next = state.pos + length;
+      if (next > state.end) break;
+      if (field === 1) {
+        const elem = parseDanmakuElem(bytes, state.pos, next);
+        if (elem.text) items.push(elem);
+      }
+      state.pos = next;
+    } else if (wire === 5) {
+      state.pos += 4;
+    } else if (wire === 1) {
+      state.pos += 8;
+    } else {
+      break;
+    }
+  }
+  return items;
+}
+
+async function fetchDanmakuSegment(ctx, meta, segmentIndex) {
+  const cacheKey = `${meta.cid}:${segmentIndex}`;
+  const hit = danmakuCache.get(cacheKey);
+  if (hit && Date.now() - hit.at < DANMAKU_CACHE_TTL_MS) return hit.items;
+
+  const url =
+    `${API}/x/v2/dm/web/seg.so?type=1` +
+    `&oid=${encodeURIComponent(meta.cid)}&pid=${encodeURIComponent(meta.aid)}` +
+    `&segment_index=${segmentIndex}`;
+  const headers = {
+    'User-Agent': UA,
+    Referer: `https://www.bilibili.com/video/${meta.bvid || ''}`,
+    Accept: '*/*',
+    'Accept-Language': 'zh-CN,zh;q=0.9',
+    // Ask for the raw bytes: any transparent compression would be undecodable
+    // in the sandbox.
+    'Accept-Encoding': 'identity',
+  };
+
+  let resp;
+  try {
+    resp = await ctx.fetch(url, { method: 'GET', headers });
+  } catch (err) {
+    ctx.log.warn(`bilibili danmaku segment failed (${segmentIndex}): ${err.message || err}`);
+    throw new ctx.Error('Unavailable', ctx.t('err_network'));
+  }
+
+  // 304/204/empty: this segment index does not exist (past the last segment).
+  if (resp.status === 304 || resp.status === 204) return [];
+  if (resp.status === 412) {
+    throw new ctx.Error('RateLimited', ctx.t('err_risk_control'), { retryAfterSec: 60 });
+  }
+  if (resp.status === 429) {
+    const retry = parseInt(resp.headers['retry-after'] || '30', 10);
+    throw new ctx.Error('RateLimited', ctx.t('err_rate_limited'), {
+      retryAfterSec: Number.isFinite(retry) ? retry : 30,
+    });
+  }
+  if (resp.status === 401 || resp.status === 403) {
+    throw new ctx.Error('Forbidden', ctx.t('err_forbidden'));
+  }
+  if (resp.status === 404) return [];
+  if (resp.status >= 500) throw new ctx.Error('Unavailable', ctx.t('err_network'));
+  if (resp.status < 200 || resp.status >= 300) {
+    throw new ctx.Error('Internal', `${ctx.t('err_unexpected')}（HTTP ${resp.status}）`);
+  }
+
+  let items = [];
+  try {
+    const bytes = resp.bytes();
+    if (bytes && bytes.byteLength > 0) items = parseDanmakuSegment(bytes);
+  } catch (err) {
+    ctx.log.warn(`bilibili danmaku segment parse failed (${segmentIndex}): ${err.message || err}`);
+    items = [];
+  }
+
+  if (danmakuCache.has(cacheKey)) danmakuCache.delete(cacheKey);
+  danmakuCache.set(cacheKey, { at: Date.now(), items });
+  while (danmakuCache.size > DANMAKU_CACHE_MAX) {
+    danmakuCache.delete(danmakuCache.keys().next().value);
+  }
+  return items;
+}
+
+function danmakuMode(raw) {
+  const mode = Number(raw);
+  if (mode === 4) return 'bottom';
+  if (mode === 5) return 'top';
+  if (mode === 1 || mode === 2 || mode === 3 || mode === 6) return 'scroll';
+  return null; // 7 高级弹幕, 8 代码弹幕, 9 BAS: not renderable as plain text
+}
+
+/* ------------------------------------------------------------------ */
+/* WBI signing                                                         */
+/* ------------------------------------------------------------------ */
 function fileNameKey(url) {
   const s = String(url || '');
   const name = s.slice(s.lastIndexOf('/') + 1);
@@ -1775,6 +1977,49 @@ export default {
       if (value && out.indexOf(value) < 0) out.push(value);
       if (out.length >= 8) break;
     }
+    return out;
+  },
+
+  async danmaku(ctx, { itemId, fromMs = 0, toMs = 60000 } = {}) {
+    const meta = await playbackMeta(ctx, itemId);
+    if (!meta.cid || !meta.aid) return [];
+
+    const from = Math.max(0, Math.floor(Number(fromMs) || 0));
+    let to = Math.floor(Number(toMs) || 0);
+    if (!(to > from)) to = from + 60_000;
+    if (meta.durationMs > 0) {
+      if (from >= meta.durationMs) return [];
+      if (to > meta.durationMs) to = meta.durationMs;
+    }
+
+    const firstSegment = Math.floor(from / DANMAKU_SEGMENT_MS) + 1;
+    const lastSegment = Math.floor((to - 1) / DANMAKU_SEGMENT_MS) + 1;
+    const segments = [];
+    for (let index = firstSegment; index <= lastSegment; index++) {
+      if (segments.length >= DANMAKU_MAX_SEGMENTS) break;
+      segments.push(index);
+    }
+
+    const seen = new Set();
+    const out = [];
+    for (const index of segments) {
+      const items = await fetchDanmakuSegment(ctx, meta, index);
+      for (const elem of items) {
+        const timeMs = elem.progressMs;
+        if (timeMs < from || timeMs >= to) continue;
+        const mode = danmakuMode(elem.mode);
+        if (!mode) continue; // advanced/code/BAS danmaku have no plain text form
+        const text = String(elem.text || '').trim();
+        if (!text) continue;
+        const key = elem.idStr || `${timeMs}:${mode}:${text}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push({ timeMs, text, color: elem.color & 0xffffff, mode });
+        if (out.length >= DANMAKU_MAX_ITEMS) break;
+      }
+      if (out.length >= DANMAKU_MAX_ITEMS) break;
+    }
+    out.sort((a, b) => a.timeMs - b.timeMs);
     return out;
   },
 

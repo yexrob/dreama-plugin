@@ -21,7 +21,8 @@
       "seasonCid": 770004,
       "seasonEpCid": 770005,
       "mid": "123456789",
-      "favFolderId": "555001"
+      "favFolderId": "555001",
+      "danmakuCid": 770001
     }
   },
   "navAnonymous": {
@@ -2116,7 +2117,7 @@
           "cover": "http://i0.hdslb.com/bfs/bangumi/image/bangumi-1.png",
           "desc": "番剧搜索结果。",
           "media_score": {
-            "score": 9.0
+            "score": 9
           },
           "badges": [
             {
@@ -2447,5 +2448,9 @@
         }
       ]
     }
+  },
+  "danmakuSegments": {
+    "770001:1": "CiYIofc2EOgHGAEgGSj///8HOgzliY3mjpLmiZPljaFiBjkwMDAwMQosCKL3NhDQDxgBIBkogID8BzoS57qi6Imy5rua5Yqo5by55bmVYgY5MDAwMDIKJgij9zYQuBcYBSAZKP///wc6DOmhtumDqOW8ueW5lWIGOTAwMDAzCiUIpPc2EIgnGAQgGSiA/gM6DOW6lemDqOW8ueW5lWIGOTAwMDA0CjIIpfc2EPAuGAcgGSj///8HOhjpq5jnuqflvLnluZXlupTooqvkuKLlvINiBjkwMDAwNQodCKb3NhDYNhgBIBko////BzoDICAgYgY5MDAwMDYKJgin9zYQwD4YASAZKP///wc6DOmHjeWkjeadoeebrmIGOTAwMDA3CiYIp/c2EMA+GAEgGSj///8HOgzph43lpI3mnaHnm65iBjkwMDAwNwo2CKj3NhD4zAMYBiAZKID+/wc6G+mAhuWQkeW8ueW5leaMiea7muWKqOWkhOeQhmIGOTAwMDA4CicIqfc2EMjcAxgBIBko////BzoM5LiL5LiA5YiG6ZKfYgY5MDAwMDk=",
+    "770001:2": "CjAIscU3EKiEFhgBIBko////BzoV56ys5LqM5q6156ys5LiA5YiG6ZKfYgY5MTAwMDEKKQiyxTcQgLUYGAUgGSj//wM6D+esrOS6jOautemhtumDqGIGOTEwMDAy"
   }
 }

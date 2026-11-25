@@ -2,7 +2,7 @@
   "api": 1,
   "id": "dev.dreama.bilibili",
   "name": "$t:plugin_name",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Dreama",
   "description": "$t:plugin_desc",
   "license": "GPL-3.0-or-later",
@@ -13,6 +13,7 @@
     "progress",
     "favorites",
     "subtitles",
+    "danmaku",
     "categories"
   ],
   "permissions": {

@@ -4,10 +4,10 @@
     {
       "id": "dev.dreama.bilibili",
       "name": "哔哩哔哩",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "浏览哔哩哔哩的视频、番剧与排行榜；扫码登录后可同步观看历史、收藏和播放进度",
-      "url": "https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/dist/dev.dreama.bilibili-1.1.0.d3plugin",
-      "sha256": "c6abd68cb8ab4b65dff8c1f5cf0ad52f226e8fb159c7c8ad635271fe40ecc861",
+      "url": "https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/dist/dev.dreama.bilibili-1.2.0.d3plugin",
+      "sha256": "836627bbf5412c4bcb2632730f325a85d1cff03d2358b641573033c0f4014341",
       "minApp": "1.0.0"
     }
   ]

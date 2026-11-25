@@ -71,7 +71,13 @@ test('bilibili plugin passes static check and recorded anonymous + QR login flow
     const qs = url.searchParams;
     const cookie = String(headers.Cookie || '');
     if (sink) {
-      sink.push({ method, path: p, query: Object.fromEntries(qs.entries()), cookie });
+      sink.push({
+        method,
+        path: p,
+        query: Object.fromEntries(qs.entries()),
+        cookie,
+        headers: Object.fromEntries(Object.entries(headers).map(([k, v]) => [k.toLowerCase(), String(v)])),
+      });
     }
     const json = (data, status = 200) => ({
       status,
@@ -153,6 +159,20 @@ test('bilibili plugin passes static check and recorded anonymous + QR login flow
     if (p === '/x/v2/history/report') {
       state.bodies.push({ path: p, body: String(body || '') });
       return authed ? json(FIXTURES.historyReport) : json({ code: -101, message: '账号未登录' });
+    }
+    if (p === '/x/v2/dm/web/seg.so') {
+      const key = `${qs.get('oid')}:${qs.get('segment_index')}`;
+      const encoded = FIXTURES.danmakuSegments[key];
+      if (!encoded) {
+        // Bilibili answers 304 with an empty body past the last segment.
+        return { status: 304, headers: {}, setCookies: [], body: Buffer.alloc(0) };
+      }
+      return {
+        status: 200,
+        headers: { 'content-type': 'application/octet-stream' },
+        setCookies: [],
+        body: Buffer.from(encoded, 'base64'),
+      };
     }
     return json({ code: -404, message: `unhandled mock path: ${p}` });
   };
@@ -337,6 +357,52 @@ test('bilibili plugin passes static check and recorded anonymous + QR login flow
       () => host.invoke('playback', { itemId: `ep:${ids.missingEpId}` }),
       (e) => e instanceof PluginCallError && e.code === 'NotFound',
     );
+
+    // ---- danmaku (protobuf segments) ---------------------------------------
+    const dm = await host.invoke('danmaku', { itemId: `v:${ids.singleBvid}`, fromMs: 0, toMs: 60000 });
+    assert.equal(validateProtocolType('DanmakuResult', dm).valid, true);
+    assert.ok(dm.length > 0, 'danmaku must come back for a video with recorded segments');
+    assert.ok(dm.every((d) => d.timeMs >= 0 && d.timeMs < 60000), 'items outside the window must be dropped');
+    assert.deepEqual(
+      dm.map((d) => d.timeMs),
+      [...dm.map((d) => d.timeMs)].sort((a, b) => a - b),
+      'danmaku must be sorted by time',
+    );
+    assert.equal(dm.find((d) => d.text === '红色滚动弹幕').color, 0xff0000);
+    assert.equal(dm.find((d) => d.text === '顶部弹幕').mode, 'top');
+    assert.equal(dm.find((d) => d.text === '底部弹幕').mode, 'bottom');
+    assert.equal(dm.find((d) => d.text === '逆向弹幕按滚动处理').mode, 'scroll');
+    assert.equal(dm.some((d) => d.text.includes('高级弹幕')), false, 'mode 7 has no plain-text form');
+    assert.equal(dm.filter((d) => d.text === '重复条目').length, 1, 'duplicate ids must be collapsed');
+    assert.equal(dm.some((d) => d.text.trim() === ''), false, 'empty danmaku must be dropped');
+    assert.equal(tokenPattern.test(JSON.stringify(dm)), false);
+
+    const dmCalls = calls.filter((c) => c.path === '/x/v2/dm/web/seg.so');
+    assert.deepEqual(dmCalls.map((c) => c.query.segment_index), ['1'], 'only the covered segment is fetched');
+    assert.equal(dmCalls[0].query.oid, String(ids.cid));
+    assert.equal(dmCalls[0].query.pid, String(ids.aid));
+    assert.equal('cookie' in dmCalls[0].headers, false, 'danmaku requests must not carry the login cookie');
+    assert.equal(dmCalls[0].headers['accept-encoding'], 'identity');
+
+    // A window crossing the 6-minute boundary pulls the second segment and keeps
+    // only what falls inside the requested range.
+    const dmCross = await host.invoke('danmaku', { itemId: `v:${ids.singleBvid}`, fromMs: 355000, toMs: 400000 });
+    assert.ok(dmCross.length > 0);
+    assert.ok(dmCross.every((d) => d.timeMs >= 355000 && d.timeMs < 400000));
+    const crossSegments = calls
+      .filter((c) => c.path === '/x/v2/dm/web/seg.so')
+      .map((c) => c.query.segment_index);
+    assert.ok(crossSegments.includes('1') && crossSegments.includes('2'), `expected both segments, got ${crossSegments}`);
+    // The first segment is cached for the runtime: no duplicate fetch of '1'.
+    assert.equal(crossSegments.filter((i) => i === '1').length, 1, 'segments are cached per runtime');
+
+    // Beyond the item duration there is nothing to ask for.
+    const dmPast = await host.invoke('danmaku', { itemId: `v:${ids.singleBvid}`, fromMs: 900000, toMs: 960000 });
+    assert.deepEqual(dmPast, []);
+
+    // A video with no recorded segments answers 304 per segment: empty, not an error.
+    const dmNone = await host.invoke('danmaku', { itemId: `v:${ids.multiBvid}`, fromMs: 0, toMs: 60000 });
+    assert.deepEqual(dmNone, []);
 
     // ---- search / suggest -------------------------------------------------
     const search = await host.invoke('search', { query: '深度' });
