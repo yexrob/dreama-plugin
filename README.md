@@ -1,8 +1,8 @@
 # Dreama 插件仓库
 
-[depth3d](https://github.com/yexrob/depth3d) 是 PICO 头显上的「2D → 实时 3D 影院」。这个仓库放它的**第三方媒体源插件**：每个插件把某个视频来源（B 站、网盘、自建服务……）变成 App 里的首页分区、分类、详情和播放地址。
+[Dreama](https://github.com/yexrob/dreama) 是 PICO 头显上的「2D → 实时 3D 影院」。这个仓库放它的**第三方媒体源插件**：每个插件把某个视频来源（B 站、网盘、自建服务……）变成 App 里的首页分区、分类、详情和播放地址。
 
-插件是单个 `.d3plugin` 包（标准 zip），跑在 App 内置的 QuickJS 沙箱里，只能通过宿主网关访问 `manifest.json` 里声明的域名。协议规范在 depth3d 仓库的 [`docs/specs/plugin-protocol.md`](https://github.com/yexrob/depth3d/blob/main/docs/specs/plugin-protocol.md)。
+插件是单个 `.d3plugin` 包（标准 zip），跑在 App 内置的 QuickJS 沙箱里，只能通过宿主网关访问 `manifest.json` 里声明的域名。协议规范在 Dreama 仓库的 [`docs/specs/plugin-protocol.md`](https://github.com/yexrob/dreama/blob/main/docs/specs/plugin-protocol.md)。
 
 ## 安装
 
@@ -39,16 +39,16 @@ https://cdn.jsdelivr.net/gh/yexrob/dreama-plugin@main/index.json
 
 ## 开发
 
-本仓库的测试与打包依赖 depth3d 仓库里的 `tools/plugin-kit`（与头显同语义的 QuickJS 运行时、网络策略、Schema 与打包器）。把两个仓库放在同一目录：
+本仓库的测试与打包依赖 Dreama 仓库里的 `tools/plugin-kit`（与头显同语义的 QuickJS 运行时、网络策略、Schema 与打包器）。把两个仓库放在同一目录：
 
 ```
 Projects/
-├── depth3d/            # 提供 tools/plugin-kit
+├── dreama/             # 提供 tools/plugin-kit
 └── dreama-plugin/      # 本仓库
 ```
 
 ```bash
-cd depth3d/tools/plugin-kit && npm ci
+cd dreama/tools/plugin-kit && npm ci
 
 cd ../../dreama-plugin
 npm run lint                              # 结构检查，不依赖 kit（CI 必跑）
@@ -59,14 +59,14 @@ npm run build                             # 生成 dist/*.d3plugin 与 index.jso
 npm run verify                            # 确认 dist/ 与 index.json 和源码一致
 ```
 
-`DEPTH3D_KIT=/path/to/depth3d/tools/plugin-kit` 可以覆盖自动查找。
+`DEPTH3D_KIT=/path/to/dreama/tools/plugin-kit` 可以覆盖自动查找。
 
-CI 里 `lint` 作业总是运行；`test` 作业需要 depth3d 仓库可访问，只有配置了仓库变量 `DEPTH3D_REPO`（例如 `yexrob/depth3d`）才会启用。
+CI 里 `lint` 作业总是运行；`test` 作业需要 Dreama 仓库可访问（已配置 `DEPTH3D_REPO=yexrob/dreama`）。
 
 单独调试某个插件：
 
 ```bash
-KIT=../depth3d/tools/plugin-kit
+KIT=../dreama/tools/plugin-kit
 node $KIT/bin/d3plugin.js run home plugins/bilibili --config /tmp/cfg.json --storage /tmp/st.json
 node $KIT/bin/d3plugin.js run playback plugins/bilibili --item v:BV1xx411c7mD --config /tmp/cfg.json
 ```
