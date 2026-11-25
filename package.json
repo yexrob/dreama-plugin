@@ -12,6 +12,7 @@
     "check": "node scripts/check.mjs",
     "build": "node scripts/build.mjs",
     "verify": "node scripts/build.mjs --check",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "lint": "node scripts/lint.mjs"
   }
 }

@@ -6,21 +6,34 @@ on:
   pull_request:
 
 jobs:
-  test:
+  # Always runs, no external checkout: manifest shape, i18n key coverage and
+  # index.json / dist consistency.
+  lint:
     runs-on: ubuntu-latest
     steps:
-      # The plugin-kit lives in the depth3d repo, so CI checks out both.
-      # Set the repository variable DEPTH3D_REPO when the plugin-kit moves or
-      # when depth3d is private (a private repo needs a PAT with read access:
-      # pass it as `token:` below, the default GITHUB_TOKEN cannot see it).
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run lint
+
+  # Needs the depth3d checkout for tools/plugin-kit (the authoritative runtime).
+  # Skipped until the repository variable DEPTH3D_REPO is configured.
+  test:
+    if: vars.DEPTH3D_REPO != ''
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
         with:
           path: plugins
 
       - uses: actions/checkout@v4
         with:
-          repository: ${{ vars.DEPTH3D_REPO || 'yexrob/depth3d' }}
+          repository: ${{ vars.DEPTH3D_REPO }}
           path: depth3d
+          # A private depth3d needs a PAT here (the default GITHUB_TOKEN cannot
+          # see other repositories):
+          # token: ${{ secrets.DEPTH3D_READ_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:

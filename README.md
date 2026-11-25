@@ -51,7 +51,8 @@ Projects/
 cd depth3d/tools/plugin-kit && npm ci
 
 cd ../../dreama-plugin
-npm test                                  # 离线回归（fixtures 驱动，CI 跑这个）
+npm run lint                              # 结构检查，不依赖 kit（CI 必跑）
+npm test                                  # 离线回归（fixtures 驱动）
 npm run check                             # 打真实服务跑 d3plugin check（需要网络）
 npm run check -- bilibili                 # 只查一个
 npm run build                             # 生成 dist/*.d3plugin 与 index.json
@@ -59,6 +60,8 @@ npm run verify                            # 确认 dist/ 与 index.json 和源�
 ```
 
 `DEPTH3D_KIT=/path/to/depth3d/tools/plugin-kit` 可以覆盖自动查找。
+
+CI 里 `lint` 作业总是运行；`test` 作业需要 depth3d 仓库可访问，只有配置了仓库变量 `DEPTH3D_REPO`（例如 `yexrob/depth3d`）才会启用。
 
 单独调试某个插件：
 
@@ -76,6 +79,7 @@ dist/               打包产物 *.d3plugin（提交进仓库，供 CDN 分发�
 index.json          仓库索引（由 npm run build 生成，不要手改）
 lib/kit.mjs         定位并加载 depth3d plugin-kit
 scripts/build.mjs   打包 + 生成索引 + --check 校验一致性
+scripts/lint.mjs    不依赖 kit 的结构检查（manifest、文案、index/dist 一致性）
 scripts/check.mjs   对所有插件跑 d3plugin check
 test/               每个插件一条离线回归（fixtures 驱动）
 ```
